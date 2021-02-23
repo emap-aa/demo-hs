@@ -9,21 +9,27 @@ type Text' = [Char]
 type Word' = [Char]
 
 
--- :t map toLower
+-- OBS  concat . map == concatMap
 
--- commonWords :: Int -> Text' -> String
+commonWords :: Int -> Text' -> String
 commonWords n = 
   concat . map showRun . take n . sortRuns . countRuns . sortWords . words . map toLower
 
 
+-- how to implement?
 showRun :: (Int,Word') -> Text'
 showRun (x,y) = ""
 
+
+-- how to implement?
 countRuns :: [Word'] -> [(Int,Word')]
 countRuns [] = []
 
+
+-- how to make it if runs are (Word',Int)?
 sortRuns :: [(Int,Word')] -> [(Int,Word')]
 sortRuns = sort
+
 
 sortWords :: [Word'] -> [Word']
 sortWords = sort
