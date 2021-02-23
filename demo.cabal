@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: dc80a8f1d7082261ad5546b2a526572ce8472880764d2d5d4e6757105c17e666
+-- hash: 3ea8f6ccb5d4c756b581a5610e10c34d53cd2f1b1a993917106bd6db21030b01
 
 name:           demo
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      CommonWords
       Lib
   other-modules:
       Paths_demo
