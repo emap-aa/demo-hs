@@ -3,34 +3,46 @@ module CommonWords where
 
 import Data.Char
 import Data.List
+import Prelude hiding (Word)
+import System.FilePath
 
-type Text' = [Char]
--- como lidar com um tipo ja declarado no prelude
-type Word' = [Char]
+type Word = [Char]
+type Text = [Char]
 
+data Run = Run
+  { count :: Int
+  , word :: Word
+  } 
 
--- OBS  concat . map == concatMap
+instance Eq Run where
+  (==) x y = word x == word y && count x == count y
 
-commonWords :: Int -> Text' -> String
+instance Ord Run where
+  (<=) x y =
+    if count x == count y
+      then word x <= word y
+      else count x <= count y
+
+instance Show Run where
+  show (Run c w) = w ++ ": " ++ show c ++ "\n"
+
+commonWords :: Int -> Text -> String
 commonWords n = 
-  concat . map showRun . take n . sortRuns . countRuns . sortWords . words . map toLower
-
-
--- how to implement?
-showRun :: (Int,Word') -> Text'
-showRun (x,y) = ""
-
+  concatMap showRun . take n . sortRuns . countRuns . sortWords . words . map toLower
 
 -- how to implement?
-countRuns :: [Word'] -> [(Int,Word')]
+showRun :: Run -> Text
+showRun (Run x y) = y ++ ": " ++ show x ++ "\n"
+
+-- how to implement?
+countRuns :: [Word] -> [Run]
 countRuns [] = []
+countRuns xs = [Run (length ys) (head ys) | ys <- group xs]
 
+-- how to make it if runs are (Word,Int)?
+sortRuns :: [Run] -> [Run]
+sortRuns = reverse . sort
 
--- how to make it if runs are (Word',Int)?
-sortRuns :: [(Int,Word')] -> [(Int,Word')]
-sortRuns = sort
-
-
-sortWords :: [Word'] -> [Word']
+sortWords :: [Word] -> [Word]
 sortWords = sort
 

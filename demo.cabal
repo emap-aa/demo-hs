@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 3ea8f6ccb5d4c756b581a5610e10c34d53cd2f1b1a993917106bd6db21030b01
+-- hash: 01c44f00797857672933a6d4588b231727b4dc838254c305c9a445c372ca8adb
 
 name:           demo
 version:        0.1.0.0
@@ -36,9 +36,10 @@ library
   build-depends:
       QuickCheck
     , base >=4.7 && <5
+    , filepath
   default-language: Haskell2010
 
-executable demo-exe
+executable counter
   main-is: Main.hs
   other-modules:
       Paths_demo
@@ -49,6 +50,7 @@ executable demo-exe
       QuickCheck
     , base >=4.7 && <5
     , demo
+    , filepath
   default-language: Haskell2010
 
 test-suite demo-test
@@ -63,4 +65,5 @@ test-suite demo-test
       QuickCheck
     , base >=4.7 && <5
     , demo
+    , filepath
   default-language: Haskell2010
