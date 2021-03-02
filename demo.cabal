@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9611f9b52918b93b090ac9cdfd10b4a2943ea6222e0151521840d0213efd3a6c
+-- hash: 7b1b8a8a32a9f35ed7529c0891b027622512fc3cc164c1eecf8e0339baa04ce7
 
 name:           demo
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      Chapter2
       CommonWords
       Lib
       Literate
