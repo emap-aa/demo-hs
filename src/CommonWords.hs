@@ -1,10 +1,20 @@
 
 module CommonWords where
 
-import Data.Char
+import Data.Char ( Char, toLower )
 import Data.List
+    ( (++),
+      map,
+      length,
+      concatMap,
+      words,
+      head,
+      reverse,
+      take,
+      group,
+      sort )
 import Prelude hiding (Word)
-import System.FilePath
+import System.FilePath ()
 
 type Word = [Char]
 type Text = [Char]
@@ -46,3 +56,5 @@ sortRuns = reverse . sort
 sortWords :: [Word] -> [Word]
 sortWords = sort
 
+-- >>> commonWords 10 "Alexandre Rademaker é um cara legal"  
+-- "\233: 1\num: 1\nrademaker: 1\nlegal: 1\ncara: 1\nalexandre: 1\n"
