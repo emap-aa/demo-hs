@@ -1,10 +1,11 @@
 
 module Chapter2 where
 
-import Data.Char
+import Data.Char ( toUpper )
 
 -- Exercio A: “Is a half of two plus two equal to two or three?”
 
+ansA :: Bool
 ansA = x == 2 || x == 3
   where 
     x = (2 + 2) `div` 2 
@@ -21,4 +22,5 @@ modernise xss = unwords . map f $ words xss
     f xs =  toUpper (head xs) : tail xs 
 
 
-testC = modernise "The morphology of prex – an essay in meta-algorithmics"
+-- >>> modernise "The morphology of prex - an essay in meta-algorithmics"
+-- "The Morphology Of Prex - An Essay In Meta-algorithmics"
