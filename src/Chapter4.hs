@@ -1,13 +1,35 @@
 module Chapter4 where
 
-
 data Nat
   = Zero
   | Succ Nat
   deriving (Eq, Ord, Show)
 
+-- exercise B
 
--- exercise H : Yuri
+allPairs :: [(Integer, Integer)]
+allPairs = [(x,y) | x <- [0..], y <- [0..]]
+
+allPairs2 :: [(Integer, Integer)]
+allPairs2 = [(y,x-y) | x <- [0..], y <- [0..x]]
+
+-- exercise C
+
+disjoint :: (Ord a) => [a] -> [a] -> Bool
+disjoint a [] = True
+disjoint [] a = True
+
+--disjoint (a:as) (b:bs) =
+--  if b == a then False
+--  else if b > a then disjoint as (b:bs)
+--  else disjoint (a:as) bs
+
+disjoint as'@(a:as) bs'@(b:bs)
+  | b == a = False
+  | b > a = disjoint as bs'
+  | otherwise = disjoint as' bs
+
+-- exercise H: Yuri
 
 takeH :: Int -> [a] -> [a]
 takeH 0 _  = []
