@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e4ec1134f2ff19c0b177a88931181ac430996b50c0ea71ab41a251ec8da2208b
+-- hash: febcbd38a711ea86879c8c224837d9e844b70739d77c5afec5538e9332eab28e
 
 name:           demo
 version:        0.1.0.0
@@ -33,6 +33,7 @@ library
       CommonWords
       Lib
       Literate
+      Sudoku
   other-modules:
       Paths_demo
   hs-source-dirs:
