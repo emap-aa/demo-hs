@@ -5,6 +5,8 @@ _________________________________________________________
 0. Basic data types
 
 > module Sudoku where
+> import Safe.Exact
+> import qualified Data.List as L
 
 > type Matrix a = [Row a]
 > type Row a    = [a]
@@ -44,9 +46,20 @@ produto cartesiano:
 >           all nodups (cols g) &&
 >           all nodups (boxs g)
 
-> nodups       :: Eq a => [a] -> Bool
-> nodups []     = True
-> nodups (x:xs) = x `notElem` xs && nodups xs
+> nodups1 :: Eq a => [a] -> Bool
+> nodups1 []     = True
+> nodups1 (x:xs) = x `notElem` xs && nodups1 xs
+
+> nodups2 :: (Ord a) => [a] -> Bool
+> nodups2 [] = True
+> nodups2 xs = and $ zipWith (/=) ys (tail ys)
+>   where ys = L.sort xs
+
+O tipo de `nodups` vai ser instanciado pela condição imposta pelo seu
+uso em valid . As funcoes nodups1 e nodumps2 permanencem com tipos mais
+gerais, no entanto.
+
+> nodups = nodups2
 
 > rows :: Matrix a -> [Row a]
 > rows = id
@@ -125,3 +138,43 @@ produto cartesiano:
 >          "360800002",
 >          "780230100",
 >          "520901060"]
+
+
+Exercicio A
+
+
+> ansA1 = map (map (+1)) [[1,2,3],[2,3,4]]
+> ansA2a = sum $ concat [[1,2,3],[2,3,4]]
+> ansA2b = sum $ map sum [[1,2,3],[2,3,4]]
+> ansA3 = zipWith (zipWith (+)) [[1,2,3],[2,3,4]] [[1,2,3],[2,3,4]]
+
+> escalar :: Num a => [a] -> [a] -> a
+> escalar xs ys = sum (zipWithExact (*) xs ys)
+
+> multmat :: Num a => [[a]] -> [[a]] -> [[a]]
+> multmat [] _ = []
+> multmat (xs:xss) yss = [escalar xs coly | coly <- cols yss] : multmat xss yss
+
+
+Exercicio B
+
+Dimensao de `Matrix [[],[]]`?  2x0  
+Dimensao de `Matrix []`? 0xN for all N ~> transpose deveria ser Nx0
+
+> transpose, transpose1, transpose2 :: [[a]] -> [[a]]
+
+> transpose [xs] = [[x] | x <- xs]
+> transpose (xs:xss) = zipWith (:) xs (transpose xss)
+
+> transpose1 [] = repeat []
+> transpose1 (xs:xss) = zipWith (:) xs (transpose1 xss) 
+
+> transpose2 ([]:xss) = []
+> transpose2 xss = map head xss : transpose2 (map tail xss)
+
+
+Exercicio C (Lean dá para fazer!! Projeto)
+
+(not . all (not . (> 5))) [1..10]
+any (> 5) [1..10]
+
