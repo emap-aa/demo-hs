@@ -62,3 +62,35 @@ splitAt2 n (x:xs) =
   where
     (ys, zs) = splitAt2 (n - 1) xs
 
+
+fork :: (a -> b, a -> c) -> a -> (b,c)
+fork (f,g) x = (f x, g x)
+
+cross (f,g) = fork (f . fst, g . snd)
+
+{-
+
+1. unzip       = fork (map fst, map snd)
+2. cross (f,g) = fork (f . fst, g . snd)
+
+3. map id      = id
+4. map (f . g) = map f . map g
+
+5. cross (f,g) . fork (h,k) = fork (f . h,g . k)
+6. fork (f,g) . h           = fork (f . h,g . h)
+7. fst . cross (f,g)        = f . fst
+8. snd . cross (f,g)        = g . snd
+
+prove:
+
+cross (map f, map g) . unzip   = unzip . map (cross (f,g))
+cross (map f, map g) . unzip                                  { 1 }
+cross (map f, map g) . fork (map fst, map snd)                { 5 }
+fork (map f . map fst, map g . map snd)                       { 4 }
+fork (map (f . fst), map (g . snd))                           { 7,8 }
+fork (map (fst . cross (f,g)), map (snd . cross (f,g)))       { 4 }
+fork (map fst . map cross (f,g), map snd . map cross (f,g))   { 6 }
+fork (map fst, map snd) . map (cross (f,g))                   { 1 }
+unzip . map (cross (f,g))                                     
+
+-}
