@@ -24,6 +24,7 @@ nub1 [] = []
 
 nub1 (x:xs) = x : nub1 (filter (/= x) xs)
 
+dropWhile' :: (a -> Bool) -> [a] -> [a]
 dropWhile' p [] = []
 dropWhile' p (x:xs) =
   if p x
@@ -37,3 +38,28 @@ nub2 = remdups . sort
   where
     remdups []     = []
     remdups (x:xs) = x : remdups (dropWhile' (== x) xs) 
+
+
+-- exercicio F
+
+takeWhile' :: (a -> Bool) -> [a] -> [a]
+takeWhile' p [] = []
+takeWhile' p (x:xs) =
+  if p x
+    then x : takeWhile' p xs
+    else []
+
+
+span' p xs = (takeWhile' p xs, dropWhile' p xs)
+
+whiteSpace c = (c == ' ') || (c == '\n') || (c == '\t')
+
+
+words' :: String -> [String]
+words' xs
+  | null ys = []
+  | otherwise = w : words' zs
+  where
+    ys = dropWhile' whiteSpace xs
+    (w, zs) = break whiteSpace ys
+
