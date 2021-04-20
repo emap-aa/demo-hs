@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0fc19a0e46d42aa4f078ae022a45b48c51b3f63102a9b94e7c69db017f0f839d
+-- hash: f3a0491b5880cea2ae0b7d821fc35a3d6d65006ff74423ca01526a418acfd990
 
 name:           demo
 version:        0.1.0.0
@@ -27,13 +27,15 @@ source-repository head
 
 library
   exposed-modules:
-      A1
+      AoC
       Chapter2
       Chapter3
       Chapter4
       Chapter5
       Chapter6
+      Chapter7
       CommonWords
+      Galoes
       Lib
       Literate
       Sudoku
