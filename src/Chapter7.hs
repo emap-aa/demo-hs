@@ -3,6 +3,18 @@ module Chapter7 where
 
 import Data.List
 
+
+-- ## head normal form
+
+data Nat = Z | Suc Nat
+
+plus :: Nat -> Nat -> Nat
+plus Z (Suc x) = Suc x
+plus (Suc x) n = plus x (Suc n)
+
+
+-- >>> plus Z (Suc Z)
+
 -- ## lazy evaluation
 
 sqrt' x = x * x
@@ -18,6 +30,7 @@ subseqs1 (x:xs) = subseqs1 xs ++ map (x:) (subseqs1 xs)
 subseqs2 [] = [[]]
 subseqs2 (x:xs) = xss ++ map (x:) xss
   where xss = subseqs2 xs
+
 
 {- only possible under lazy evaluation -}
 
@@ -152,8 +165,17 @@ append (x:xs) ys = x : append xs ys
 reverse1 [] = []
 reverse1 (x:xs) = reverse1 xs ++ [x]
 
-
 {- steps reverse1 [1,2]? ... ([] ++ [2]) ++ [1]
+
+reverse [1,2,3] =
+reverse [2,3] ++ [1] =
+(reverse [3] ++ [2]) ++ [1] =
+((reverse [] ++ [3]) ++ [2]) ++ [1] =
+(([] ++ [3]) ++ [2]) ++ [1] =   ; 1
+([3] ++ [2]) ++ [1] =   ; 2
+[3,2] ++ [1] =   ; 3
+
+See https://youtu.be/WQy7Bzr03R4
 
    reverse xs takes
 
@@ -168,5 +190,15 @@ reverse1 (x:xs) = reverse1 xs ++ [x]
    induction
      reverse' (x:xs) ys = reverse (x:xs) ++ ys = ... = reverse xs ++ ([x] ++ ys)
      reverse' xs x:ys
+
+revcat xs ys = reverse xs ++ ys
+
+revcat [] ys =
+reverse [] ++ ys =
+[] ++ ys =
+ys
+
+revcat [] ys = ys
+
 -}
 
