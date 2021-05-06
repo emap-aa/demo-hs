@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f3a0491b5880cea2ae0b7d821fc35a3d6d65006ff74423ca01526a418acfd990
+-- hash: 9af7b0f81cb44cdf25c473fbf51d47be15d8411475c7a385bf2734567b151d34
 
 name:           demo
 version:        0.1.0.0
@@ -39,14 +39,46 @@ library
       Lib
       Literate
       Sudoku
+      Anagrams
+      Calculations
+      Examples
+      Expressions
+      Floors
+      Foxy
+      Hangman
+      Laws
+      Main
+      Matchings
+      Modernize
+      Nat
+      Numbers2Words
+      Palindrome
+      Paper
+      Parsing11
+      Parsing12
+      Pretty
+      Pretty2
+      PrettyDeep
+      PrettyShallow
+      Primes
+      Quicksort
+      Rewrites
+      Song
+      Sorts
+      Sqrt
+      Substitutions
+      Triads
+      Utilities
   other-modules:
       Paths_demo
   hs-source-dirs:
       src
+      src-tmp
   build-depends:
       QuickCheck
     , base >=4.7 && <5
     , filepath
+    , random
     , safe
   default-language: Haskell2010
 
@@ -62,6 +94,7 @@ executable counter
     , base >=4.7 && <5
     , demo
     , filepath
+    , random
     , safe
   default-language: Haskell2010
 
@@ -78,5 +111,6 @@ test-suite demo-test
     , base >=4.7 && <5
     , demo
     , filepath
+    , random
     , safe
   default-language: Haskell2010

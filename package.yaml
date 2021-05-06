@@ -24,9 +24,13 @@ dependencies:
 - QuickCheck 
 - filepath
 - safe
+- random
 
 library:
-  source-dirs: src
+  source-dirs:
+    - src
+    - src-tmp
+
 
 executables:
   counter:
