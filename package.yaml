@@ -25,6 +25,7 @@ dependencies:
 - filepath
 - safe
 - random
+- array
 
 library:
   source-dirs:

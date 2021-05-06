@@ -10,6 +10,7 @@ rather than a :+: constructor. It is a deep embedding.
 >                 nest, (<>), group, 
 >                 layouts, pretty, layout,
 >                 normalise,doc,eq1,eq2,size) where
+> import Prelude hiding ((<>))
 
 > type Layout = String
 > data Doc    = Nil

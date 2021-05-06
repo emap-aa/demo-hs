@@ -3,6 +3,7 @@ Examples of pretty-printing
 > module Examples where
 
 > import PrettyDeep
+> import Prelude hiding ((<>))
 
 1. Conditional expressions
 

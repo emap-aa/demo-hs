@@ -1,121 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Pretty-Printing
 2nd April, 2013
 In Chapter 8
@@ -124,7 +7,9 @@ In Chapter 8
 >                nil, line, text, 
 >                nest, (<>), group, 
 >                layouts, pretty, 
->                layout, normalise,repn,doc,eq1,eq2,size) where
+>                layout, normalise,doc,eq1,eq2,size) where
+>
+> import Prelude hiding ((<>))
 
 > type Layout = String
 > data Doc    = Nil
@@ -243,7 +128,7 @@ Pretty-printing documents:
 > isize ids = sum [size x | (i,x) <- ids]
 
 
-> repn = foldr1 (:+:) . map (foldr1 (:<>:))
+repn = foldr1 (:+:) . map (foldr1 (:<>:))
 
 > normalise :: Doc -> [[Doc]]
 > normalise Nil        = [[]]

@@ -10,6 +10,8 @@ The shallow embedding:
 >      nest, (<>), group, 
 >      layouts, pretty, layout)
 > where
+> 
+> import Prelude hiding ((<>))
 
 > type Layout = String
 > type Doc    = [Layout]

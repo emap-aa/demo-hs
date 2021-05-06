@@ -10,6 +10,7 @@ This version provides a deep embedding.
 >      nest, (<>), group, 
 >      layouts, pretty, flatten)
 > where
+> import Prelude hiding ((<>))
 
 > type Layout = String
 > data Doc    = Nil
