@@ -3,6 +3,8 @@ Square roots
 In Chapter 03
 __________________________________________________________
 
+> module Chap03.Sqrt where
+
 > import Prelude hiding (sqrt)
 
 > type Interval = (Integer,Integer)

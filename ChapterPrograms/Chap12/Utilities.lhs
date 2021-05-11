@@ -1,5 +1,5 @@
-> module Utilities
-> where
+
+> module Chap12.Utilities where
 
 > compose :: [a -> a] -> a -> a
 > compose = foldr (.) id

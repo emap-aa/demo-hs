@@ -1,12 +1,13 @@
-> module Calculations 
+
+> module Chap12.Calculations 
 >   (Calculation (Calc), Step,
 >    paste, calculate)
 > where
 
-> import Expressions
-> import Laws
-> import Rewrites
-> import Utilities (compose)
+> import Chap12.Expressions
+> import Chap12.Laws
+> import Chap12.Rewrites
+> import Chap12.Utilities (compose)
 
 > data Calculation = Calc Expr [Step]
 > type Step        = (LawName,Expr)

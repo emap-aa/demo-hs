@@ -4,6 +4,8 @@ In Chapter 05
 _________________________________________________________
 0. Basic data types
 
+> module Chap05.Sudoku where
+
 > type Matrix a = [Row a]
 > type Row a    = [a]
 

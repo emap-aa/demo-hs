@@ -1,6 +1,8 @@
 Examples of pretty-printing
 
-> import PrettyDeep
+> module Chap08.Examples where
+> import Chap08.PrettyDeep
+> import Prelude hiding ((<>))
 
 1. Conditional expressions
 

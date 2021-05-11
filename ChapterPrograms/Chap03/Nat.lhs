@@ -3,6 +3,8 @@ Natural Numbers
 In Chapter 03
 _____________________________________________________________
 
+> module Chap03.Nat where
+
 > data Nat = Zero | Succ Nat
 
 > instance Eq Nat where
@@ -42,6 +44,7 @@ _____________________________________________________________
 >   Zero < Succ n   = True
 >   Succ m < Zero   = False
 >   Succ m < Succ n = (m < n)
+>   m <= n          = m < n || m == n
 
 > divModNat :: Nat -> Nat -> (Nat,Nat)
 > divModNat x y = if x < y then (Zero,x)

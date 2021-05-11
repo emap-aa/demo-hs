@@ -1,8 +1,9 @@
-> module Matchings (match)
+
+> module Chap12.Matchings (match)
 > where
-> import Expressions
-> import Substitutions (Substitution, unitSub, combine)
-> import Utilities (parts)
+> import Chap12.Expressions
+> import Chap12.Substitutions (Substitution, unitSub, combine)
+> import Chap12.Utilities (parts)
 
 > match :: (Expr,Expr) -> [Substitution]
 > match = concatMap (combine . map matchA) . alignments

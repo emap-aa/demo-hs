@@ -1,4 +1,5 @@
-> module Parsing where
+
+> module Chap12.Parsing where
 
 > import Prelude hiding (guard, fail)
 > import Data.Char

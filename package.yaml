@@ -29,9 +29,7 @@ dependencies:
 
 library:
   source-dirs:
-    - src
-    - src-tmp
-
+    - ChapterPrograms
 
 executables:
   counter:

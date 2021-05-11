@@ -4,12 +4,13 @@ In Chapter 8
 
 The shallow embedding:
 
-> module PrettyShallow
+> module Chap08.PrettyShallow
 >     (Doc, Layout,
 >      nil, line, text, 
 >      nest, (<>), group, 
->      layouts, pretty, layout)
-> where
+>      layouts, pretty, layout) where
+
+> import Prelude hiding ((<>))
 
 > type Layout = String
 > type Doc    = [Layout]

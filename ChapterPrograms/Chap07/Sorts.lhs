@@ -4,6 +4,8 @@ In Chapter 7
 __________________________________________________________
 1. Merge sort
 
+> module Chap07.Sorts where
+
 > msort1 :: (Ord a) => [a] -> [a]
 > msort1 []  = []
 > msort1 [x] = [x]

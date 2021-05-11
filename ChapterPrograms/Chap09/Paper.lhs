@@ -2,6 +2,8 @@ Paper-Rock-Scissors
 4th October, 2012
 In Chapter 09
 
+> module Chap09.Paper where
+
 > import System.Random
 
 > data Move  = Paper | Rock | Scissors deriving Show

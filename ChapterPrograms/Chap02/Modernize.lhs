@@ -3,6 +3,9 @@ Modernize
 In Chapter 02
 _________________________________________________
 
+> module Chap02.Modernize where
+
+> import Prelude hiding (Word)
 > import Data.List (words, unwords)
 > import Data.Char (toUpper)
 

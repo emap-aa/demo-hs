@@ -2,6 +2,8 @@ Parsing
 30th September, 2013
 In Chapter 11
 
+> module Chap11.Parsing where
+
 > import Prelude hiding (guard, fail)
 > import Data.Char
 
@@ -29,7 +31,7 @@ In Chapter 11
 
 > guard :: Bool -> Parser ()
 > guard True  = return ()
-> guard False = Main.fail
+> guard False = fail
 
 > fail :: Parser a
 > fail = Parser (\s -> [])

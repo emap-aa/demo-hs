@@ -3,6 +3,8 @@ Palindromes
 In Chapter 02
 ________________________________________________
 
+> module Chap02.Palindrome where
+
 > import Data.Char (toLower,isAlpha)
 
 > palindrome :: IO()

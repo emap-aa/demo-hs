@@ -5,11 +5,13 @@ In Chapter 8
 This version provides a Group constructor
 rather than a :+: constructor. It is a deep embedding.
 
-> module Pretty2 (Doc, Layout,
+> module Chap08.Pretty2 (Doc, Layout,
 >                 nil, line, text, 
 >                 nest, (<>), group, 
 >                 layouts, pretty, layout,
 >                 normalise,doc,eq1,eq2,size) where
+
+> import Prelude hiding ((<>))
 
 > type Layout = String
 > data Doc    = Nil

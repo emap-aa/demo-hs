@@ -1,4 +1,5 @@
-> module Rewrites (rewrites)
+
+> module Chap12.Rewrites (rewrites)
 > where
 > import Expressions
 > import Laws (Equation)

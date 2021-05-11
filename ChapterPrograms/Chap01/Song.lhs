@@ -3,6 +3,8 @@ Song
 In Chapter 01
 __________________________________________________________________
 
+> module Chap01.Song where
+
 > song n  = if n==0 then "" else song (n-1) ++ "\n" ++ verse n
 > verse n = line1 n ++ line2 n ++ line3 n ++ line4 n
 

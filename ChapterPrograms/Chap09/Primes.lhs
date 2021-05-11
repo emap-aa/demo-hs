@@ -2,6 +2,8 @@ Primes
 13th October, 2013
 In Chapter 09
 
+> module Chap09.Primes where
+
 > primes :: [Integer]
 > primes = 2:([3..] \\ composites)
 >  where composites = mergeAll [map (p*) [p..] | p <- primes]

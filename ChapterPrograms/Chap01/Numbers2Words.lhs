@@ -3,6 +3,8 @@ Numbers into words
 In Chapter 01
 _______________________________________________________
 
+> module Chap01.Numbers2Words where
+
 > units, teens, tens :: [String]
 > units = ["zero","one","two","three","four","five",
 >          "six","seven","eight","nine"]

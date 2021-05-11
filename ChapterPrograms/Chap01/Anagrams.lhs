@@ -24,6 +24,9 @@ ________________________________________________
 The functions toLower and sort are provided in
 standard Haskell libraries:
 
+> module Chap01.Anagrams where
+
+> import Prelude hiding (Word)
 > import Data.Char (toLower)
 > import Data.List (sort,words)
 > import System.Environment (getArgs)

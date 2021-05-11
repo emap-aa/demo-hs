@@ -2,6 +2,7 @@ Hangman
 10 October, 2013
 In Chapter 10
 
+> module Chap10.Hangman where
 
 > hangman :: IO ()
 > hangman = do {xs <- readFile "Words.tex";

@@ -1,9 +1,9 @@
-> module Expressions 
+> module Chap12.Expressions 
 >   (Expr (Compose), Atom (Var,Con), 
 >    VarName, ConName, deCompose, expr)
 > where
 
-> import Parsing
+> import Chap12.Parsing
 > import Data.List (intersperse)
 > import Utilities (compose)
 > import Data.Char (isAlphaNum,isAlpha,isDigit)

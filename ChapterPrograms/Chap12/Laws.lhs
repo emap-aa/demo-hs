@@ -1,10 +1,11 @@
-> module Laws
+
+> module Chap12.Laws
 >   (Law (Law), LawName, sortLaws, law,
 >    Equation, equation)
 > where
 
-> import Expressions
-> import Parsing
+> import Chap12.Expressions
+> import Chap12.Parsing
 > import Data.List (partition)
 
 > data Law      = Law LawName Equation

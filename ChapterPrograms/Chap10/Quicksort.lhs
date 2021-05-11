@@ -1,7 +1,9 @@
 Quicksort in place
 12th October, 2013
 In Chapter 10
- 
+
+> module Chap10.Quicksort where
+
 > import Control.Monad.ST
 > import Data.Array.ST
 

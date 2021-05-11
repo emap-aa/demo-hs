@@ -3,6 +3,8 @@ Foxy
 In Chapter 02
 ________________________________________________
 
+> module Chap02.Foxy where
+
 > type CIN = [Char]
 
 > addSum :: CIN -> CIN

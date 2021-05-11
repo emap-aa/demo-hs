@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 776a4dd5b10bccc55ab4567fe738c9287aa66368e702ad77cd7ae582517b4986
+-- hash: 34f6287a8eecbce209c6b5e24a040c623c52302f32ea9e7a6d6dbe4b6d054c8f
 
 name:           demo
 version:        0.1.0.0
@@ -27,44 +27,41 @@ source-repository head
 
 library
   exposed-modules:
-      AoC
-      Chapter2
-      Chapter3
-      Chapter4
-      Chapter5
-      Chapter6
-      Chapter7
-      CommonWords
-      Galoes
-      Lib
-      Literate
-      Sudoku
-      Anagrams
-      Examples
-      Floors
-      Foxy
-      Hangman
-      Modernize
-      Nat
-      Numbers2Words
-      Palindrome
-      Paper
-      Pretty
-      Pretty2
-      PrettyDeep
-      PrettyShallow
-      Primes
-      Quicksort
-      Song
-      Sorts
-      Sqrt
-      Triads
-      Utilities
+      Chap01.Anagrams
+      Chap01.Commonwords
+      Chap01.Numbers2Words
+      Chap01.Song
+      Chap02.Foxy
+      Chap02.Modernize
+      Chap02.Palindrome
+      Chap03.Floors
+      Chap03.Nat
+      Chap03.Sqrt
+      Chap04.Triads
+      Chap05.Sudoku
+      Chap07.Sorts
+      Chap08.Examples
+      Chap08.Pretty
+      Chap08.Pretty2
+      Chap08.PrettyDeep
+      Chap08.PrettyShallow
+      Chap09.Paper
+      Chap09.Primes
+      Chap10.Hangman
+      Chap10.Quicksort
+      Chap12.Calculations
+      Chap12.Expressions
+      Chap12.Laws
+      Chap12.Main
+      Chap12.Matchings
+      Chap12.Parsing
+      Chap12.Rewrites
+      Chap12.Substitutions
+      Chap12.Utilities
   other-modules:
       Paths_demo
   hs-source-dirs:
-      src
-      src-tmp
+      ChapterPrograms
   build-depends:
       QuickCheck
     , array

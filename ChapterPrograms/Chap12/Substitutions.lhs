@@ -1,4 +1,5 @@
-> module Substitutions
+
+> module Chap12.Substitutions
 >   (Substitution, emptySub, unitSub,
 >    combine, unify, apply)
 > where

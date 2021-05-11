@@ -3,6 +3,8 @@ Pythagoran triads and Taxicab numbers
 In Chapter 04
 ____________________________________________________
 
+> module Chap04.Triads where
+
 > triads :: Int -> [(Int,Int,Int)]
 > triads n = [(x,y,z) | x <- [1..m], y <- [x+1..n],
 >                       coprime x y,

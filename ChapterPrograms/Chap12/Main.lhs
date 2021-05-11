@@ -1,9 +1,10 @@
-> module Main where
 
-> import Expressions
-> import Parsing
-> import Laws
-> import Calculations
+> module Chap12.Main where
+
+> import Chap12.Expressions
+> import Chap12.Parsing
+> import Chap12.Laws
+> import Chap12.Calculations
 
 > simplify :: [String] -> String -> Calculation
 > simplify strings string

@@ -4,12 +4,14 @@ In Chapter 8
 
 This version provides a deep embedding.
 
-> module PrettyDeep 
+> module Chap08.PrettyDeep 
 >     (Doc, Layout,
 >      nil, line, text, 
 >      nest, (<>), group, 
 >      layouts, pretty, flatten)
 > where
+
+> import Prelude hiding ((<>))
 
 > type Layout = String
 > data Doc    = Nil

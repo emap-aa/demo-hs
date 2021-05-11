@@ -3,6 +3,8 @@ Floors
 In Chapter 03
 ______________________________________________________
 
+> module Chap03.Floors where
+
 > badfloor :: Float -> Integer
 > badfloor = read . takeWhile (/= '.') . show
  

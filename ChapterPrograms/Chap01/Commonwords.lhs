@@ -3,6 +3,9 @@ Common words.
 In Chapter 01.
 _________________________________________
 
+> module Chap01.Commonwords where
+
+> import Prelude hiding (Word)
 > import Data.Char (toLower)
 > import Data.List (sort,words)
 > import System.IO
