@@ -18,7 +18,6 @@ In Chapter 11
 > instance Functor Parser where
 >  fmap f p = Parser (map (\(x,s) -> (f x, s)) . apply p) 
 
-> -- x : String -> [(a, String)]
 > instance Applicative Parser where
 >   pure x = Parser (\s -> [(x, s)])
 >   f <*> p =
