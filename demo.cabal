@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 34f6287a8eecbce209c6b5e24a040c623c52302f32ea9e7a6d6dbe4b6d054c8f
+-- hash: f26a9781782d0dd5e98e292fa0975fc2093b96f9501bc850cc91962185d35a87
 
 name:           demo
 version:        0.1.0.0
@@ -49,6 +49,7 @@ library
       Chap09.Primes
       Chap10.Hangman
       Chap10.Quicksort
+      Chap11.Parsing
       Chap12.Calculations
       Chap12.Expressions
       Chap12.Laws
