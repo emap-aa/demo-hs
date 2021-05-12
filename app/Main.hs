@@ -1,6 +1,9 @@
 
 module Main where
 
+main :: IO ()
+main = putStrLn "Test"
+{-
 import System.Environment ( getArgs )
 import System.Exit ( exitFailure, exitSuccess )
 import Lib
@@ -23,3 +26,4 @@ countWords as = do
   
 main :: IO ()
 main = getArgs >>= parse
+-}
