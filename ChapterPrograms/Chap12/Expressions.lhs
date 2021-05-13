@@ -5,7 +5,7 @@
 
 > import Chap12.Parsing
 > import Data.List (intersperse)
-> import Utilities (compose)
+> import Chap12.Utilities (compose)
 > import Data.Char (isAlphaNum,isAlpha,isDigit)
 
 > newtype Expr = Compose [Atom] deriving Eq
@@ -34,7 +34,7 @@
 > ident :: Parser [Expr] -> Parser Expr
 > ident args 
 >   = do {x <- token (some (sat isAlphaNum));
->         Parsing.guard (isAlpha (head x));
+>         Chap12.Parsing.guard (isAlpha (head x));
 >         if isVar x 
 >         then return (Compose [Var x])
 >         else if (x == "id") 
@@ -47,7 +47,7 @@
 > isVar _     = False
 
 > operator = do {op <- token (some (sat symbolic));
->                Parsing.guard (op /= "." && op /= "=");
+>                Chap12.Parsing.guard (op /= "." && op /= "=");
 >                return op} 
 
 > symbolic = (`elem` opsymbols)

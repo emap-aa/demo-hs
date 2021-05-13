@@ -4,9 +4,9 @@
 >    combine, unify, apply)
 > where
 
-> import Expressions
+> import Chap12.Expressions
 > import Data.Maybe (fromJust)
-> import Utilities (cp)
+> import Chap12.Utilities (cp)
 
 > type Substitution = [(VarName,Expr)]
 

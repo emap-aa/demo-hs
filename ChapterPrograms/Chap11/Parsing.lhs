@@ -14,7 +14,18 @@ In Chapter 11
 
 > parse :: Parser a -> String -> a
 > parse p = fst . head . apply p
-    
+
+> instance Functor Parser where
+>  fmap f p = Parser (map (\(x,s) -> (f x, s)) . apply p) 
+
+> instance Applicative Parser where
+>   pure x = Parser (\s -> [(x, s)])
+>   f <*> p =
+>    Parser (\s ->
+>              let ps1 = apply p s -- ps1 : [(a, String)]
+>                  ps2 = concatMap (\(xa, s1) -> apply f s1) ps1 in -- ps2 : [(a->b, String)]
+>                zip (map fst ps2 <*> map fst ps1) (map snd ps2))
+
 > instance Monad Parser where
 >  return x = Parser (\s -> [(x,s)])
 >  p >>= q  = Parser (\s -> [(y,s'') | 

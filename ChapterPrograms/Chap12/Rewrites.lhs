@@ -1,11 +1,11 @@
 
 > module Chap12.Rewrites (rewrites)
 > where
-> import Expressions
-> import Laws (Equation)
-> import Matchings (match)
-> import Substitutions (apply)
-> import Utilities (anyOne, segments)
+> import Chap12.Expressions
+> import Chap12.Laws (Equation)
+> import Chap12.Matchings (match)
+> import Chap12.Substitutions (apply)
+> import Chap12.Utilities (anyOne, segments)
 
 > rewrites :: Equation -> Expr -> [Expr]
 > rewrites eqn (Compose as) = map Compose (
