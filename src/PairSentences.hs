@@ -56,6 +56,7 @@ taill [] = []
 taill (a:b) = b
 
 splitPair :: Eq a => ([a], [a]) -> ([a], [a]) -> (([a], [a]), ([a], [a]))
+splitPair (a, []) (b, c) = ((a, []), (b, c))
 splitPair (fo, go@(goo:gos)) (fd, gd)
   | null rl = splitPair (fo ++ [goo], gos) (fd ++ headl gd, taill gd) --Não achou, próximo
   | otherwise = ((fo, go), (ll, rl ++ gd)) -- Achou, cria o par 
