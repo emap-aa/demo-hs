@@ -49,10 +49,15 @@ pairSentences lo@(loo:los) (ldd:lds)
 -- [A B C] [D F G H I]
 -- [X D F Y I] []
 
+headl [] = []
+headl (a:b) = [a]
+
+taill [] = []
+taill (a:b) = b
+
 splitPair :: Eq a => ([a], [a]) -> ([a], [a]) -> (([a], [a]), ([a], [a]))
 splitPair (fo, go@(goo:gos)) (fd, gd)
-  | null gd = ((fo, go), (fd, gd))
-  | null rl = splitPair (fo ++ [goo], gos) (fd ++ [head gd], tail gd) --Não achou, próximo
+  | null rl = splitPair (fo ++ [goo], gos) (fd ++ headl gd, taill gd) --Não achou, próximo
   | otherwise = ((fo, go), (ll, rl ++ gd)) -- Achou, cria o par 
   where (ll, rl) = splitWhen fd goo
 
